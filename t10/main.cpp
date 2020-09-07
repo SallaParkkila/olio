@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-int strcount(char s,char c)
+int strcount(char *s,char c)
 {
     int count=0;
-    while ((s)!='\0')
+    while ((*s)!='\0')
     {
         if ((*s)==c)
         count++;
