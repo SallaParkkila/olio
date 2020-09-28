@@ -1,25 +1,24 @@
-#include <bits/stdc++.h> 
-using namespace std; 
+#include <iostream>
+#include <algorithm>
+#include <string>
 
-void reverseStr(string& str) 
-{ 
-    int n = str.length(); 
-    for (int i = 0; i < n / 2; i++) 
-        swap(str[i], str[n - i - 1]); 
-} 
+using namespace std;
 
-int main() 
-{ 
-    string str,str2;
-    cout << "kirjoita jotakin" << endl;
-    cin >> str;
-    str=str2;
-    reverseStr(str);
-    if (str2==str){
+int main()
+{
+    string myString;
+    string reverseString;
+
+    cout << "kirjoita jotain ";
+    cin >> myString;
+
+    reverseString = myString;
+    reverse(reverseString.begin(), reverseString.end());
+
+    if (myString == reverseString)
         cout << "on palindromi" << endl;
-    }
-    else{
+    else
         cout << "ei ole palindromi" << endl;
-    }
-    return 0; 
+
+    return 0;
 }
