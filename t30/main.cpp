@@ -71,14 +71,10 @@ class ympyra : public muoto{
 };
 
 int main(){
-    ellipsi el(15,20);
-    ympyra ym(15);
-    nelio ne(25);
-    suorakulmio sk(10,15);
-    muoto*a = &el;
-    muoto*b = &ym;
-    muoto*c = &ne;
-    muoto*d = &sk;
+    muoto *a = new ellipsi(10, 15);
+    muoto *b = new ympyra(20);
+    muoto *c = new nelio(25);
+    muoto *d = new suorakulmio(30, 35);
     cout << "ellipsin pinta-ala:     " << a->area() << endl;
     cout << "ympyran pinta-ala:      " << b->area() << endl;
     cout << "nelion pinta-ala:       " << c->area() << endl;
