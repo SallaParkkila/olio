@@ -1,13 +1,25 @@
 #include <iostream>
+#include <string>
+#include <fstream> //Tiedoston lukeminen ja kirjoittaminen
+
 using namespace std;
 
-class Kompleksiluvut //Luokka, kompleksiluku=reaaliosa ja imaginääriosa
+class KompleksiluvutVirtuaalinen{ //Virtuaaliluokka
+    public:
+        virtual string Virtuaalinen()=0; //Julkinen, kaikilla oikeus käyttää
+};
+
+class Kompleksiluvut:public KompleksiluvutVirtuaalinen //Johdettu luokka, kompleksiluku=reaaliosa ja imaginääriosa
 {
     private: //Yksityinen, vain luokan omat jäsenfunktiot ja määritellyt ystävät (kapselointi)
       float reaali;
       float imaginaari;
 
-    public: //Julkinen, kaikilla oikeus käyttää
+    public: //Julkinen tämäkin, kaikilla oikeus käyttää
+        string Virtuaalinen(){
+            string Teksti="Tekstia";
+            return Teksti;
+        }
        Kompleksiluvut(): reaali(0), imaginaari(0){ } //määritelty nollaksi
        void input()
     //input ottaa sisään syötetyt tiedot
@@ -49,5 +61,10 @@ int main() //Main funktio, jossa kompleksiluvut käyttää julkisia jäseniä (p
     tulos = k1 - k2;
     tulos.output(); //Tulos ulos
 
+    ofstream teksti;//Tiedostoon kirjoitus
+    Kompleksiluvut kl;
+    teksti.open("tekstitiedosto.txt"); //Luodaan tekstitiedosto
+    teksti << kl.Virtuaalinen() << " tiedostoon" << endl; //Tulostetaan tiedostoon "Tekstia tiedostoon"
+    teksti.close(); //Lopetetaan tekstin kirjoittaminen
     return 0;
 }
