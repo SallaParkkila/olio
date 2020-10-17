@@ -7,7 +7,7 @@ using namespace std;
 class KompleksiluvutVirtuaalinen{ //Virtuaaliluokka
     public:
         virtual string Virtuaalinen()=0; //Julkinen, kaikilla oikeus käyttää
-};
+};  //;!
 
 class Kompleksiluvut:public KompleksiluvutVirtuaalinen //Johdettu luokka, kompleksiluku=reaaliosa ja imaginääriosa
 {
@@ -46,7 +46,7 @@ class Kompleksiluvut:public KompleksiluvutVirtuaalinen //Johdettu luokka, komple
            else
                cout << "Kompleksiluku: " << reaali << "+" << imaginaari << "i\n"; //...tai näin jos imaginääri on vähemmän kuin 0
        }
-}; //; !
+}; //;!
 
 int main() //Main funktio, jossa kompleksiluvut käyttää julkisia jäseniä (public)
 {
